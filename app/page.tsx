@@ -37,8 +37,8 @@ const ProductList: React.FC = () => {
         );
 
   return (
-    <>
-      <main className=" container flex flex-col gap-10 lg:flex-row py-12 ">
+    <div className=" min-h-dvh flex flex-col ">
+      <main className=" container flex-1 flex flex-col gap-10 lg:flex-row py-12 ">
         <div className=" md:flex-1 ">
           <div className=" flex gap-10 items-end justify-between ">
             <h1 className=" font-bold text-foreground text-3xl lg:text-4xl ">
@@ -90,7 +90,7 @@ const ProductList: React.FC = () => {
         <CartComponent />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

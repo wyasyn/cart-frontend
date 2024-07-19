@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/wyasyn/cart-frontend.git)
+- Live Site URL: [Vercel](https://cart-frontend-gamma.vercel.app/)
 
 ## My process
 
@@ -55,25 +55,9 @@ Users should be able to:
 
 Working on this project helped me understand how to effectively manage state in a React application using Context API. I also improved my skills in building responsive layouts with CSS Grid and Flexbox. Below are some code snippets showcasing what I learned:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
 ### Continued development
 
-In future projects, I aim to delve deeper into advanced state management solutions like Redux and explore more about server-side rendering with Next.js. Additionally, I want to refine my skills in creating more complex animations and transitions with CSS and JavaScript.
+In future projects, I aim to develop deeper into advanced state management solutions like Redux and explore more about server-side rendering with Next.js. Additionally, I want to refine my skills in creating more complex animations and transitions with CSS and JavaScript.
 
 ### Useful resources
 
@@ -83,10 +67,10 @@ In future projects, I aim to delve deeper into advanced state management solutio
 
 ## Author
 
-- Website - [Your Name](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Yasin Walum](https://www.ywalum.com)
+- Frontend Mentor - [@wyasyn](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@wyasyn](https://www.twitter.com/wyasyn)
 
 ## Acknowledgments
 
-I would like to thank the Frontend Mentor community for their support and feedback. Special thanks to [Insert Name] for their helpful insights and guidance on state management.
+I would like to thank the Frontend Mentor community for their support and feedback. Special thanks to John and Anna Bell for their helpful insights and guidance on state management.
