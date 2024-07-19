@@ -6,6 +6,7 @@ import products from "@/constants/data.json"; // Adjust the path as necessary
 import CartComponent from "@/components/cart";
 import { ModeToggle } from "@/components/modeToggle";
 import ProductItem from "@/components/ProductItem";
+import Footer from "@/components/Footer";
 
 interface Product {
   id: string;
@@ -36,57 +37,60 @@ const ProductList: React.FC = () => {
         );
 
   return (
-    <main className=" container flex flex-col gap-10 lg:flex-row py-12 ">
-      <div className=" md:flex-1 ">
-        <div className=" flex gap-10 items-end justify-between ">
-          <h1 className=" font-bold text-foreground text-3xl lg:text-4xl ">
-            Desserts
-          </h1>{" "}
-          <ModeToggle />
-        </div>
+    <>
+      <main className=" container flex flex-col gap-10 lg:flex-row py-12 ">
+        <div className=" md:flex-1 ">
+          <div className=" flex gap-10 items-end justify-between ">
+            <h1 className=" font-bold text-foreground text-3xl lg:text-4xl ">
+              Desserts
+            </h1>{" "}
+            <ModeToggle />
+          </div>
 
-        <div className=" flex items-end justify-start gap-2 flex-wrap py-8 ">
-          <button
-            className={` hover:text-foreground duration-300 ease-in-out px-2 py-1  
-              ${
-                selectedCategory === "All"
-                  ? "text-foreground"
-                  : "text-muted-foreground"
-              }`}
-            onClick={() => setSelectedCategory("All")}
-          >
-            All
-          </button>
-          {categories.map((category) => (
+          <div className=" flex items-end justify-start gap-2 flex-wrap py-8 ">
             <button
               className={` hover:text-foreground duration-300 ease-in-out px-2 py-1  
               ${
-                selectedCategory === category
-                  ? "text-foreground"
+                selectedCategory === "All"
+                  ? "text-foreground font-semibold"
                   : "text-muted-foreground"
               }`}
-              key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => setSelectedCategory("All")}
             >
-              {category}
+              All
             </button>
-          ))}
+            {categories.map((category) => (
+              <button
+                className={` hover:text-foreground duration-300 ease-in-out px-2 py-1  
+              ${
+                selectedCategory === category
+                  ? "text-foreground font-semibold"
+                  : "text-muted-foreground"
+              }`}
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          <div className=" grid custom-grid gap-8 ">
+            {filteredProducts.map((product) => (
+              <ProductItem
+                id={product.id}
+                key={product.id}
+                name={product.name}
+                image={product.image}
+                price={product.price}
+                category={product.category}
+              />
+            ))}
+          </div>
         </div>
-        <div className=" grid custom-grid gap-8 ">
-          {filteredProducts.map((product) => (
-            <ProductItem
-              id={product.id}
-              key={product.id}
-              name={product.name}
-              image={product.image}
-              price={product.price}
-              category={product.category}
-            />
-          ))}
-        </div>
-      </div>
-      <CartComponent />
-    </main>
+        <CartComponent />
+      </main>
+      <Footer />
+    </>
   );
 };
 

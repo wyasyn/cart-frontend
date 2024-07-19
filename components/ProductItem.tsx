@@ -57,25 +57,31 @@ export default function ProductItem({
             isItemInCart(id) && "border-2 border-primary"
           } `}
         />
-        <div className=" absolute bg-background rounded-full -bottom-4  border z-10 left-1/2 -translate-x-1/2 text-xs flex items-center justify-center gap-1 ">
+        <div className=" absolute bg-background rounded-full -bottom-4 z-10 left-1/2 -translate-x-1/2 text-xs flex items-center justify-center gap-1 ">
           {isItemInCart(id) ? (
-            <div className=" flex items-center justify-between min-w-[150px] px-4 py-2 ">
-              <button onClick={() => decreaseItemQuantity(id)}>
+            <div className=" flex items-center justify-between min-w-[150px] px-4 py-2 bg-primary border rounded-full text-secondary ">
+              <button
+                className=" hover:scale-110 duration-300 ease-in-out "
+                onClick={() => decreaseItemQuantity(id)}
+              >
                 <CircleMinus size={16} />
               </button>
-              <span>{getItemQuantity(id)}</span>
-              <button onClick={() => increaseItemQuantity(id)}>
+              <span className=" font-semibold ">{getItemQuantity(id)}</span>
+              <button
+                className=" hover:scale-110 duration-300 ease-in-out "
+                onClick={() => increaseItemQuantity(id)}
+              >
                 <CirclePlus size={16} />
               </button>
             </div>
           ) : (
             <button
-              className=" flex items-center justify-center gap-2 px-4 py-2 min-w-[150px]  "
+              className=" border rounded-full flex items-center justify-center gap-2 px-4 py-2 min-w-[150px] hover:text-primary hover:border-primary duration-300 ease-in-out text-foreground font-semibold   "
               onClick={() => {
                 addItemToCart(id);
               }}
             >
-              <span>
+              <span className=" text-primary ">
                 <ShoppingCart size={16} />
               </span>{" "}
               Add to Cart
@@ -85,7 +91,7 @@ export default function ProductItem({
       </div>
       <div className=" mt-8 ">
         <p> {category}</p>
-        <p className=" font-semibold ">{name}</p>
+        <p className=" font-semibold text-foreground ">{name}</p>
 
         <p className=" font-semibold text-primary "> ${price.toFixed(2)}</p>
       </div>

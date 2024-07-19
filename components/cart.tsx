@@ -16,8 +16,8 @@ export default function CartComponent() {
   } = useData();
 
   return (
-    <div className=" bg-secondary h-fit p-8 rounded-xl min-w-[350px] ">
-      <h1 className=" text-2xl font-semibold tracking-wide mb-5 ">
+    <div className=" h-fit p-8 min-w-[350px] ">
+      <h1 className=" text-2xl font-bold tracking-wide mb-5 text-primary ">
         Your Cart ({totalQuantity}){" "}
       </h1>
 
@@ -66,7 +66,7 @@ export default function CartComponent() {
           </div>
           <button
             onClick={confirmOrder}
-            className=" bg-primary text-primary-foreground py-2 rounded-full font-semibold "
+            className=" bg-primary text-primary-foreground py-2 rounded-full font-semibold hover:bg-muted-foreground duration-300 ease-in-out "
           >
             Confirm Order
           </button>
@@ -85,8 +85,11 @@ export default function CartComponent() {
 
       {showOrderConfirmation && (
         <>
-          <div className=" fixed inset-0 bg-black/35 z-20 backdrop-blur-sm " />
-          <div className=" z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background p-8 rounded-xl shadow-md flex flex-col gap-6 min-w-[350px] ">
+          <div
+            onClick={resetOrder}
+            className=" fixed inset-0 bg-black/35 z-20 backdrop-blur-sm "
+          />
+          <div className=" bg-secondary z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 rounded-xl shadow-md flex flex-col gap-6 w-full max-w-[400px] ">
             <Image
               src="/assets/images/icon-order-confirmed.svg"
               width={32}
@@ -116,7 +119,7 @@ export default function CartComponent() {
                           {item.name}
                         </h3>
                         <div className=" flex items-end gap-3 ">
-                          <span className=" font-medium ">
+                          <span className=" font-medium text-primary ">
                             {item.quantity}x
                           </span>
                           <span>@ {item.price.toFixed(2)}</span>
@@ -130,14 +133,14 @@ export default function CartComponent() {
                 </li>
               ))}
             </ul>
-            <div className=" flex items-center justify-between gap-4 ">
+            <div className=" flex text-foreground items-center justify-between gap-4 ">
               <p>Order Total</p>
-              <div className=" text-2xl font-semibold text-foreground mt-2 ">
+              <div className=" text-2xl font-bold  mt-2 ">
                 ${totalPrice.toFixed(2)}
               </div>
             </div>
             <button
-              className=" bg-primary py-2 flex items-center justify-center rounded-full text-background "
+              className=" bg-primary py-2 flex items-center justify-center rounded-full text-background hover:bg-muted-foreground duration-300 ease-in-out "
               onClick={resetOrder}
             >
               Start New Order
