@@ -6,7 +6,7 @@ import products from "@/constants/data.json"; // Adjust the path as necessary
 import CartComponent from "@/components/cart";
 import { ModeToggle } from "@/components/modeToggle";
 import ProductItem from "@/components/ProductItem";
-import Footer from "@/components/Footer";
+
 
 interface Product {
   id: string;
@@ -89,7 +89,7 @@ const ProductList: React.FC = () => {
         </div>
         <CartComponent />
       </main>
-      <Footer />
+     
     </div>
   );
 };
